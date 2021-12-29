@@ -24,9 +24,19 @@ void MainWindow::showContextMenu(const QPoint &pos)
     myMenu.exec(globalPos);
 }
 
+
+
+
 void MainWindow::Plus()
 {
-    ui->ScrollArea->widget()->layout()->addWidget(new Port(nullptr));
+    auto prt=new Port(nullptr);
+    ui->ScrollArea->widget()->layout()->addWidget(prt);
+    prt->move(0,0);
+}
+
+void MainWindow::mousePressEvent(QMouseEvent *event)
+{
+
 }
 
 MainWindow::~MainWindow()

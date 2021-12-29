@@ -2,8 +2,8 @@
 #define PORT_H
 
 #include <QWidget>
-#include <QLineEdit>>
-#include<QLayout>>
+#include <QLineEdit>
+#include<QLayout>
 #include "contact.h"
 #include <QMouseEvent>
 
@@ -19,8 +19,11 @@ public:
     explicit Port(QWidget *parent);
     ~Port();
 
+public slots:
+    void showContextMenu(const QPoint &pos);
 private slots:
-    void on_pushButton_clicked();
+    void addContact();
+    void Del();
 
 private:
     Ui::Port *ui;
@@ -33,6 +36,7 @@ protected:
 private:
     bool _mousePressed;
     QPoint _mousePosition;
+    QPoint curentPosition;
 };
 
 #endif // PORT_H
